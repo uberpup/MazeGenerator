@@ -1,5 +1,6 @@
 # MazeGenerator
-Project for MIPT Python course Code Review
+Project for MIPT Python course Code Review.
+
 This program draws basic console-drawn labyrints, using rather DFS or minimum spanning tree.
 It can also show route between start cell and finish cell and can write a labyrinth in a file "labyrinth.txt".
 Minimum spanning tree is concturcted via Kruskal algorithm.
