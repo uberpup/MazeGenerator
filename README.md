@@ -17,6 +17,6 @@ How to use?
 5. In order to download a labyrinth with root, type "YES" again
 
 Links:
-   https://en.wikipedia.org/wiki/Maze_generation_algorithm
-   http://www.astrolog.org/labyrnth/algrithm.htm
-   https://habr.com/ru/post/262345/
+* https://en.wikipedia.org/wiki/Maze_generation_algorithm
+* http://www.astrolog.org/labyrnth/algrithm.html
+* https://habr.com/ru/post/262345/
