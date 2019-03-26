@@ -18,5 +18,7 @@ How to use?
 
 Links:
    https://en.wikipedia.org/wiki/Maze_generation_algorithm
+   
    http://www.astrolog.org/labyrnth/algrithm.htm
+   
    https://habr.com/ru/post/262345/
