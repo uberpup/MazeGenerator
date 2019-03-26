@@ -204,7 +204,7 @@ def KruskalGetRoute(start, finish, matrix):  # Lee algorithm
     return route
 
 
-def KruskalGenerator(starters):  # Creating a minimum spanning tree using Kruskal algorithm
+def KruskalGenerator(starters):  # creating a minimum spanning tree using Kruskal algorithm
     matrix = [[Cell() for i in range(starters[2])] for j in range(starters[1])]  # initialization of labyrinth matrix
     random.seed(version=2)
     edges = set()
