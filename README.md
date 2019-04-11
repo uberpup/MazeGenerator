@@ -18,9 +18,6 @@ How to use?
 
 Links:
 * https://en.wikipedia.org/wiki/Maze_generation_algorithm
-<<<<<<< HEAD
 * http://www.astrolog.org/labyrnth/algrithm.htm 
-=======
 * http://www.astrolog.org/labyrnth/algrithm.html
->>>>>>> master
 * https://habr.com/ru/post/262345/

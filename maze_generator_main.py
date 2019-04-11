@@ -79,47 +79,20 @@ def greeting():
 def get_neighbours(current, matrix):  # checking all the cases # I do not think, that it sorted out the problem
     i = current[1]                    # cannot define them separately cause "list out of range"
     j = current[2]
-    if i == 0 and j == 0:
-        down_de = DetailedElement(matrix_element=matrix[i + 1][j], x=i + 1, y=j, direction=Direction.DOWN)
-        right_de = DetailedElement(matrix_element=matrix[i][j + 1], x=i, y=j + 1, direction=Direction.RIGHT)
-        return [down_de, right_de]
-    if i == len(matrix) - 1 and j == len(matrix[0]) - 1:
+    neighbours = []
+    if i > 0:
         up_de = DetailedElement(matrix_element=matrix[i - 1][j], x=i - 1, y=j, direction=Direction.UP)
-        left_de = DetailedElement(matrix_element=matrix[i][j - 1], x=i, y=j - 1, direction=Direction.LEFT)
-        return [up_de, left_de]
-    if i == 0 and j == len(matrix[0]) - 1:
+        neighbours.append(up_de)
+    if i < len(matrix) - 1:
         down_de = DetailedElement(matrix_element=matrix[i + 1][j], x=i + 1, y=j, direction=Direction.DOWN)
+        neighbours.append(down_de)
+    if j > 0:
         left_de = DetailedElement(matrix_element=matrix[i][j - 1], x=i, y=j - 1, direction=Direction.LEFT)
-        return [down_de, left_de]
-    if i == len(matrix) - 1 and j == 0:
-        up_de = DetailedElement(matrix_element=matrix[i - 1][j], x=i - 1, y=j, direction=Direction.UP)
+        neighbours.append(left_de)
+    if j < len(matrix[0]) - 1:
         right_de = DetailedElement(matrix_element=matrix[i][j + 1], x=i, y=j + 1, direction=Direction.RIGHT)
-        return [up_de, right_de]
-    if i == 0:
-        down_de = DetailedElement(matrix_element=matrix[i + 1][j], x=i + 1, y=j, direction=Direction.DOWN)
-        right_de = DetailedElement(matrix_element=matrix[i][j + 1], x=i, y=j + 1, direction=Direction.RIGHT)
-        left_de = DetailedElement(matrix_element=matrix[i][j - 1], x=i, y=j - 1, direction=Direction.LEFT)
-        return [down_de, right_de, left_de]
-    if j == 0:
-        down_de = DetailedElement(matrix_element=matrix[i + 1][j], x=i + 1, y=j, direction=Direction.DOWN)
-        right_de = DetailedElement(matrix_element=matrix[i][j + 1], x=i, y=j + 1, direction=Direction.RIGHT)
-        up_de = DetailedElement(matrix_element=matrix[i - 1][j], x=i - 1, y=j, direction=Direction.UP)
-        return [down_de, right_de, up_de]
-    if i == len(matrix) - 1:
-        right_de = DetailedElement(matrix_element=matrix[i][j + 1], x=i, y=j + 1, direction=Direction.RIGHT)
-        up_de = DetailedElement(matrix_element=matrix[i - 1][j], x=i - 1, y=j, direction=Direction.UP)
-        left_de = DetailedElement(matrix_element=matrix[i][j - 1], x=i, y=j - 1, direction=Direction.LEFT)
-        return [right_de, up_de, left_de]
-    if j == len(matrix[0]) - 1:
-        down_de = DetailedElement(matrix_element=matrix[i + 1][j], x=i + 1, y=j, direction=Direction.DOWN)
-        up_de = DetailedElement(matrix_element=matrix[i - 1][j], x=i - 1, y=j, direction=Direction.UP)
-        left_de = DetailedElement(matrix_element=matrix[i][j - 1], x=i, y=j - 1, direction=Direction.LEFT)
-        return [down_de, up_de, left_de]
-    down_de = DetailedElement(matrix_element=matrix[i + 1][j], x=i + 1, y=j, direction=Direction.DOWN)
-    right_de = DetailedElement(matrix_element=matrix[i][j + 1], x=i, y=j + 1, direction=Direction.RIGHT)
-    up_de = DetailedElement(matrix_element=matrix[i - 1][j], x=i - 1, y=j, direction=Direction.UP)
-    left_de = DetailedElement(matrix_element=matrix[i][j - 1], x=i, y=j - 1, direction=Direction.LEFT)
-    return [down_de, right_de, up_de, left_de]
+        neighbours.append(right_de)
+    return neighbours
 
 
 def visited(neighbours):  # pretty obvious
@@ -200,9 +173,9 @@ def kruskal_fill_edges_from_matrix(edges, length, width):  # const direction # n
 
 
 def kruskal_find(subset, list_of_id_sets):
-    for i in range(len(list_of_id_sets)):
-        if subset in list_of_id_sets[i]:
-            return i
+    index = list_of_id_sets.index(subset)
+    if index != -1:
+        return index
 
 
 def kruskal_get_neighbours(current, matrix):  # watching for crashed walls around current # const direction
