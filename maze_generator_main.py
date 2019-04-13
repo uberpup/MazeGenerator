@@ -173,9 +173,9 @@ def kruskal_fill_edges_from_matrix(edges, length, width):  # const direction # n
 
 
 def kruskal_find(subset, list_of_id_sets):
-    index = list_of_id_sets.index(subset)
-    if index != -1:
-        return index
+    for i in range(len(list_of_id_sets)):
+        if subset in list_of_id_sets[i]:
+            return i
 
 
 def kruskal_get_neighbours(current, matrix):  # watching for crashed walls around current # const direction
