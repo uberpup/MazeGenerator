@@ -12,7 +12,7 @@ How to use?
 2. Chose the generating mode
 3. If you want to download the labyrinth, type:
    YES
-4. Decide, whether you want to see a route. In order to do that, type:
+4. Decide, whether you want to see the route. In order to do that, type:
    YES
 5. In order to download a labyrinth with root, type "YES" again
 
